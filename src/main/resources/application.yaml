@@ -3,7 +3,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/animals?characterEncoding=utf-8&useSSL=false&serverTimezone=GMT
     username: root
-    password: buleng
+    password: xxxx你的密码
   #  文件上传这样设置后，
   #  单个文件的最大上传大小将被限制为10MB，
   #  整个请求（包括所有文件）的最大总大小也将被限制为10MB。
@@ -30,12 +30,12 @@ mybatis:
 #七牛秘钥
 oss:
   qiniu:
-    accessKey: dGmVpAKRaom1qxtPmtYmJBDZdFItN4FjuxkrpOLN
-    secretKey: frQBiXNiOXRVEckunRoQqN-HIw1qsAXtWNlpcLGe
+    accessKey: xxxxxxxxxxxxx
+    secretKey: xxxxxxxxxxxxx
     #图片存储空间名字
-    bucketName: blblog
+    bucketName: xxx
     #图片外部访问域名
-    domainName: https://cdn.buleng.xyz/
+    domainName: https://www.google.com
     #图片上传路径
     imgUpPath: animals/
     #文件上传路径
