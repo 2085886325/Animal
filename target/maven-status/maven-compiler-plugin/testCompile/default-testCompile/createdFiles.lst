@@ -1,0 +1,5 @@
+com\project\animal\TokenTest.class
+com\project\animal\AnimalApplicationTests.class
+com\project\animal\MD5Test.class
+com\project\animal\RedisTest.class
+com\project\animal\ThreadLocalTest.class

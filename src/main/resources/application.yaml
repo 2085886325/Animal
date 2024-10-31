@@ -1,0 +1,47 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/animals?characterEncoding=utf-8&useSSL=false&serverTimezone=GMT
+    username: root
+    password: buleng
+  #  文件上传这样设置后，
+  #  单个文件的最大上传大小将被限制为10MB，
+  #  整个请求（包括所有文件）的最大总大小也将被限制为10MB。
+  #  如果你需要允许更大的文件上传，
+  #  只需将数值调整为你所需的大小即可。
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+  data:
+    redis:
+      host: localhost
+      port: 6379
+#server:
+#  port: 8570
+server:
+  port: 8080
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+#用于控制是否开启将数据库字段名中的下划线（underscore）映射为 Java 实体类属性名中的驼峰命名规则。
+
+#七牛秘钥
+oss:
+  qiniu:
+    accessKey: dGmVpAKRaom1qxtPmtYmJBDZdFItN4FjuxkrpOLN
+    secretKey: frQBiXNiOXRVEckunRoQqN-HIw1qsAXtWNlpcLGe
+    #图片存储空间名字
+    bucketName: blblog
+    #图片外部访问域名
+    domainName: https://cdn.buleng.xyz/
+    #图片上传路径
+    imgUpPath: animals/
+    #文件上传路径
+    fileUpPath: animals/file/
+
+
+
+
+

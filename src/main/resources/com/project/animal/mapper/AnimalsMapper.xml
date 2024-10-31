@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.animal.mapper.AnimalsMapper">
+    <resultMap type="com.project.animal.entity.Animals" id="AnimalsMap">
+        <result property="animalid" column="animalid" jdbcType="INTEGER"/>
+        <result property="speciesid" column="speciesid" jdbcType="INTEGER"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="description" column="description" jdbcType="VARCHAR"/>
+        <result property="gender" column="gender" jdbcType="VARCHAR"/>
+        <result property="age" column="age" jdbcType="INTEGER"/>
+        <result property="weight" column="weight" jdbcType="NUMERIC"/>
+        <result property="healthstatus" column="healthstatus" jdbcType="VARCHAR"/>
+        <result property="picture" column="picture" jdbcType="VARCHAR"/>
+        <result property="shelterid" column="shelterid" jdbcType="INTEGER"/>
+        <result property="status" column="status" jdbcType="VARCHAR"/>
+        <result property="adopterid" column="adopterid" jdbcType="INTEGER"/>
+    </resultMap>
+
+
+    <select id="pageList" resultMap="AnimalsMap">
+        select * from animals
+        <where>
+            <if test="shelterid != null and shelterid != ''">
+                shelterid = #{shelterid}
+            </if>
+            <if test="speciesid != null and speciesid != ''">
+                and speciesid = #{speciesid}
+            </if>
+            <if test="gender != null and gender != ''">
+                and gender = #{gender}
+            </if>
+            <if test="name != null and name!=''">
+                and name = #{name}
+            </if>
+            <if test="age != null and age!=''">
+                and age = #{age}
+            </if>
+            <if test="status != null and status!=''">
+                and status = #{status}
+            </if>
+        </where>
+        order by animalid asc
+    </select>
+
+
+</mapper>
+
